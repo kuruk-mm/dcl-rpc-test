@@ -11,7 +11,12 @@ test-watch:
 
 build:
 	./node_modules/.bin/tsc -p tsconfig.json
-	rm -rf node_modules/@microsoft/api-extractor/node_modules/typescript || true
-	./node_modules/.bin/api-extractor run $(LOCAL_ARG) --typescript-compiler-folder ./node_modules/typescript
+
+integration:
+	@cd src; ./build.sh
+	@TS_NODE_PROJECT="src/tsconfig.json" node_modules/.bin/ts-node ./src/integration.ts
 
 .PHONY: build test
+
+dist/index.js:
+	@NODE_ENV=production node_modules/.bin/ncc build src/integration.ts -e ws
