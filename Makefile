@@ -19,4 +19,4 @@ integration:
 .PHONY: build test
 
 dist/index.js:
-	@NODE_ENV=production node_modules/.bin/ncc build src/integration.ts -e ws
+	@NODE_ENV=production node_modules/.bin/ncc build src/integration.ts

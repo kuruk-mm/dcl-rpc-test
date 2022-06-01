@@ -1,6 +1,6 @@
 import { runClient } from "./client";
-import { runServer } from "./server";
+//import { runServer } from "./server";
 
-runServer()
+//runServer()
 
 runClient()
