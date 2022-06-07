@@ -34,17 +34,20 @@ export const runClient = () => {
       // 8th step: profit
       console.log("> Invoking BookService.getBook(isbn:19997)")
       const response = await clientBookService.getBook({ isbn: 19997 })
-      console.log("  Response: ", response)
+      console.log("  Responsev2: ", response)
       expect(response).toEqual({
         author: "menduz",
         isbn: 19997,
         title: "Rpc onion layers",
       })
     
+      console.log("  InitQueryBook")
       const list: Book[] = []
       for await (const book of clientBookService.queryBooks({ authorPrefix: "mr" })) {
         list.push(book)
+        console.log("  StreamResponse: ", book)
       }
+      console.log("  List: ", list)
       expect(list).toEqual(context.hardcodedDatabase)
 
       clientSocket.close()
