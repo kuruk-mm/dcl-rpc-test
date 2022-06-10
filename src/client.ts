@@ -14,7 +14,7 @@ import { context } from "./server" // Just to check equality
 export const createBookServiceClient = <Context>(clientPort: RpcClientPort) => loadService<Context, BookServiceDefinition>(clientPort, BookServiceDefinition)
 
 export const runClient = () => {
-    const ws = new WebSocket("ws://localhost:8080/")
+    const ws = new WebSocket("ws://127.0.0.1:8080/")
     const clientSocket = WebSocketTransport(ws as any)
     // 4th step: create a client connection
     console.log("> Creating client")
