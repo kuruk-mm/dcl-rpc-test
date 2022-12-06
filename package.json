@@ -30,7 +30,7 @@
   "dependencies": {
     "@dcl/rpc": "^1.0.0-20220526130204.commit-784eddc",
     "@types/ws": "^8.5.3",
-    "@vercel/ncc": "^0.34.0",
+    "@vercel/ncc": "^0.36.0",
     "ts-node": "^10.8.0",
     "ts-proto": "^1.114.7",
     "ts-protoc-gen": "^0.15.0",
